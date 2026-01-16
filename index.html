@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- PAGE 1 : COUNTDOWN -->
+<div id="page1" class="page">
+  <h1 class="glow">Unlocking at Midnight ❤️</h1>
+  <div id="countdown">Loading...</div>
+  <button disabled>Locked 🔒</button>
+</div>
+
+<!-- PAGE 2 : MESSAGE -->
+<div id="page2" class="page hidden">
+  <h1 class="glow">Happy Birthday ❤️</h1>
+  <div id="message"></div>
+  <button onclick="location.reload()">Replay 💖</button>
+</div>
+
+<audio id="music" src="perfect.mp3" loop></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
