@@ -1,113 +1,121 @@
 /* ===== RESET ===== */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* ===== BODY ===== */
-html{
-  scroll-behavior:smooth;
+/* ===== HTML & BODY ===== */
+html, body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* IMPORTANT for phones */
 }
 
-body{
-  min-height:100vh;
-  background:linear-gradient(-45deg,#ff0080,#7928ca,#ff512f,#2af598);
-  background-size:400% 400%;
-  animation:bgMove 12s ease infinite;
-  color:white;
-  overflow-x:hidden;
-  overflow-y:auto;
+body {
+  background: linear-gradient(-45deg, #ff0080, #7928ca, #ff512f, #2af598);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
+  color: white;
 }
 
 /* ===== BACKGROUND ANIMATION ===== */
-@keyframes bgMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* ===== PAGE LAYOUT ===== */
-.page{
-  min-height:100vh;
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:40px 20px;
+/* ===== PAGE BASE ===== */
+.page {
+  width: 100%;
+  padding: 40px 20px;
+}
+
+/* ===== PAGE 1 (COUNTDOWN – CENTERED) ===== */
+#page1 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ===== PAGE 2 (MESSAGE – SCROLLABLE) ===== */
+#page2 {
+  display: block;       /* VERY IMPORTANT */
+  text-align: center;
+  padding-bottom: 80px; /* space for scroll */
 }
 
 /* ===== HIDDEN ===== */
-.hidden{
-  display:none;
+.hidden {
+  display: none !important;
 }
 
 /* ===== HEADINGS ===== */
-h1{
-  font-size:2.5rem;
-  margin-bottom:10px;
-  text-shadow:0 0 20px rgba(255,255,255,.8);
+h1 {
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(255,255,255,0.8);
 }
 
 /* ===== COUNTDOWN ===== */
-#countdown{
-  font-size:2rem;
-  margin-top:20px;
-  letter-spacing:3px;
+#countdown {
+  font-size: 2rem;
+  margin-top: 20px;
+  letter-spacing: 3px;
 }
 
 /* ===== MESSAGE ===== */
-#message{
-  max-width:900px;
-  font-size:1.2rem;
-  line-height:1.9;
-  white-space:pre-wrap;
-  margin-top:25px;
+#message {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 /* ===== BUTTON ===== */
-button{
-  margin-top:30px;
-  padding:12px 32px;
-  font-size:1rem;
-  border:none;
-  border-radius:30px;
-  background:rgba(255,255,255,.25);
-  color:white;
-  cursor:pointer;
-  box-shadow:0 0 25px rgba(255,255,255,.5);
-  transition:transform .2s, box-shadow .2s;
+button {
+  display: block;
+  margin: 40px auto 0;
+  padding: 12px 32px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.25);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(255,255,255,0.5);
 }
 
-button:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 35px rgba(255,255,255,.8);
+/* ===== GLOW ===== */
+.glow {
+  animation: glow 1.5s infinite alternate;
 }
 
-/* ===== GLOW EFFECT ===== */
-.glow{
-  animation:glow 1.5s infinite alternate;
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fff; }
+  to   { text-shadow: 0 0 30px #ffd; }
 }
 
-@keyframes glow{
-  from{ text-shadow:0 0 10px #fff }
-  to{ text-shadow:0 0 30px #ffd }
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
-@media(max-width:600px){
-  h1{
-    font-size:2rem;
+/* ===== MOBILE TWEAKS ===== */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.9rem;
   }
 
-  #message{
-    font-size:1.05rem;
+  #message {
+    font-size: 1.05rem;
   }
 
-  #countdown{
-    font-size:1.6rem;
+  #countdown {
+    font-size: 1.6rem;
   }
 }
